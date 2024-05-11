@@ -4,7 +4,7 @@ FROM tomcat:latest
 WORKDIR /usr/local/tomcat
 
 
-COPY /target/*.war webapps/
+COPY /var/lib/jenkins/workspace/nidhi_maven_package/target/*.war webapps/
 
 EXPOSE 8080
 
