@@ -1,12 +1,4 @@
 FROM tomcat:latest
 
-
-WORKDIR /usr/local/tomcat
-
-
-COPY /var/lib/jenkins/workspace/nidhi_maven_package/target/*.war webapps/
-
-EXPOSE 8080
-
-
-CMD ["catalina.sh", "run"]
+RUN rm -rf $CATALINA_HOME/webapps/ROOT
+COPY target/calculator.war $CATALINA_HOME/webapps/ROOT.war
