@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mavenapp001
+  labels:
+    app: mavenapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mavenapp
+  template:
+    metadata:
+      labels:
+        app: mavenapp
+    spec:
+      containers:
+      - name: mavenapp3
+        image: nidhisrao/test:latest
+        ports:
+        - containerPort: 80
